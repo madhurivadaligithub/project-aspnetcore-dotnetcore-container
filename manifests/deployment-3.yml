@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "testcluster-fe2f"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "testcluster-fe2f"
+  template:
+    metadata:
+      labels:
+        app: "testcluster-fe2f"
+    spec:
+      containers:
+        - name: "testcluster-fe2f"
+          image: "1233newprod.azurecr.io/testcluster"
+          ports:
+          - containerPort: 8123
