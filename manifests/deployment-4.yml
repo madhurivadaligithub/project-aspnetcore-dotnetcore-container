@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "testcluster1-f628"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "testcluster1-f628"
+  template:
+    metadata:
+      labels:
+        app: "testcluster1-f628"
+    spec:
+      containers:
+        - name: "testcluster1-f628"
+          image: "aaaatiwarishubregistry.azurecr.io/testcluster1"
+          ports:
+          - containerPort: 8123
